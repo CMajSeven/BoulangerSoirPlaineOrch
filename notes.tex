@@ -1,0 +1,151 @@
+\documentclass[twoside]{article}
+\usepackage[b4paper, margin=14.82mm, includehead]{geometry}
+\usepackage{amsmath}
+\usepackage{changepage}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{fontspec}
+\usepackage{graphicx}
+\usepackage{hanging}
+\usepackage{harmony}
+\usepackage{multicol}
+\usepackage{musicography}
+\usepackage{musixtex}
+\usepackage{wasysym}
+\setmainfont[
+ BoldFont={[ACADEMICO-BOLD.otf]}, 
+ ItalicFont={[ACADEMICO-ITALIC.otf]},
+ BoldItalicFont={[ACADEMICO-BOLDITALIC.otf]}
+ ]{[ACADEMICO-REGULAR.otf]}
+\setlength{\columnsep}{1cm}
+
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhf{}%clear all headers and footers
+\fancyhead[LE]{\fontsize{8pt}{10pt}\selectfont \slshape\rightmark}
+\fancyhead[RO]{\fontsize{8pt}{10pt}\selectfont \slshape\leftmark}
+\fancyhead[LE,RO]{\thepage}
+\setcounter{page}{28}
+
+\newcommand\dynmark[1]{\scalebox{0.9}{#1}{\kern1pt}}
+\newcommand{\nobarfrac}{\genfrac{}{}{0pt}{}}
+
+\begin{document}
+\begin{center}
+\underline{\huge{Editorial Commentary}}
+\end{center}
+
+\mbox{This edition is based on 3 sources, from highest priority to lowest}: FM, an autograph manuscript full score from 1913 (BNF MS-3841); RM, a copyist manuscript reduction from 1914 (BNF MS-1148); and PE, an edition for choir and piano published by Ricordi in 1919. There are significant changes between them, including entirely rewritten sections, and so none of them are fully compatible with each other. Major errors and discrepancies are listed below. More extensive notes are available in the source repository.
+
+\begin{hangparas}{15pt}{1}
+\begin{multicols}{2}
+
+It should be noted in interpreting the dynamic markings that FM has limited dynamics in general, and only ranges from \dynmark{\ppp} to \dynmark{\mf}. Dynamics in square brackets are generally inserted from PE.
+
+The first system has a staff for ``cymb.`` below the Timpani, but on no other system.
+
+\mbox{2, S}: ``solo'' not found in FM
+
+\mbox{5, Hpe}: Potentially an A and/or B above the chord. Difficult to read, but seems unlikely as remaining upper chords only have 3 notes.
+
+\mbox{11, Vlc}: This seems more appropriate as a solo. The next entrance has ``unis'' (not ``tous'').
+
+\mbox{13, Hpe}: Last note of measure is D in FM, corrected to E based on surroundings
+
+\mbox{14, Hpe}: Last two notes of measure are D, E in FM, in contrast to E, F♯ of RM and PE. E, F♯ seems more sensible.
+
+\mbox{19, B}: Octave lower in RM and PE compared to FM
+
+\mbox{19, \mbox{Cl. 2}}: Last two off-beat eighths are a half-step too high in FM.
+
+\mbox{30, C}: Originally A♯ in FM, should likely be G♯ to match strings
+
+\mbox{34, Obs, C}: These G\scalebox{1.5}{\musDoubleSharp}s are F\scalebox{1.5}{\musDoubleSharp}s in RM and PE. However, the cautionary ♯s on the G♯s at measure 35, and the G\scalebox{1.5}{\musDoubleSharp}s in the violins suggest these are intentional.
+
+\mbox{38, Vlc}: Missing change to bass clef in FM
+
+\mbox{43, T}: Ténor Solo in FM and RM is Soprano Solo in PE (octave higher).
+
+\mbox{44--51}: The Vl. I melody and many harmonies of FM are rewritten in RM and PE. The Vl. I melody seems more appropriate as a solo.
+
+\mbox{48, Fls}: Only one trill written in FM but this edition assumes it is meant to apply to both Flutes, which are written in one voice.
+
+\mbox{48, Bons}: Tenor clef assumed to be missing in FM 48--51 as a D♮ as read in bass clef is unlikely. It is less clear if 54--57 is intended to remain in bass clef, as either reading would form appropriate harmony, but a bass clef reading matches RM and PE . An explicit tenor clef occurs at 60.
+
+\mbox{49, Fl. 1}: E-F♯ trill in FM, and F♯-G♯ trill in RM and PE. The F♯ follows the melody of the bassoon; it is unclear whether the trill in the reductions is just intended to suggest the timbre of the flute trill.
+
+\mbox{52}:\mbox{ T}: ``2°'' marking only in RM. PE switches here from Soprano Solo to Ténor Solo
+
+\mbox{54, Bon. 1, Cor 1.2}: The harmony here seems very unlikely, moving the entrance 1 measure later
+
+\mbox{54, Cor 4}: The orchestration seems overly empty after moving \mbox{Bon. 1} and \mbox{Cor 1.2} later. Adding concert G\textsubscript{2} as in reductions
+
+\mbox{55, Cl. 2}: Written G♮ in FM should be A♮ to match Violin II.
+
+\mbox{55, Vlc}: Tenor clef missing in FM
+
+\mbox{56, Fl}: No explicit 1.\ indication after à 2. Continuation of à 2 seems inappropriate.
+
+\mbox{59, Alt}: Appears to be a C♯ corrected into a D, or vice-versa. D would match reduction.
+
+\mbox{64, Vl. I.1}: F♮s (♮ on G space) in FM. The resultant harmony with either F♮ or G♮s is unlikely. Changing this to follow the ascending wind melody similarly to the next measure
+
+\mbox{66, Cors}: Melody marked as \dynmark{\mf} and accented in reductions
+
+\mbox{68--73, Chœur}: In RM and PE, Sopranos + les autres Contraltos of FM is given to divided Sopranos, and Ténor part of FM is given to Contraltos (same octave).
+
+\mbox{69, Cor 4}: D♯ in FM should be C♯ for concert F♯ major chord.
+
+\mbox{69, Hpe}: Originally E\textsubscript{2}+E\textsubscript{3} in FM. Perhaps a treble clef is missing, but this results in a redundant C♯\textsubscript{5}. Changing to match what Harpe 2 has at 66
+
+\mbox{70, Bon. 1}: Tenor clef likely missing in FM so as to match Cor 4
+
+\mbox{72, B}: ``ne'' syllable at beat 3 of this measure in RM. PE has further changes so it is not considered.
+
+\mbox{73--78}: This section is completely rewritten in PE.
+
+\mbox{77, Hpe. 2}: Upper chord originally written on upper staff with bass clef presumably missing
+
+\mbox{77--78, Cl. 2}: Correcting explicit accidentals in FM that contradict harmony of flutes and of RM
+
+\mbox{82--86}: Melody of \mbox{Vl. I} of FM rewritten in RM and PE
+
+\mbox{85, Fls, Vls}: \mbox{Vl. I} Beat 3 G♯ of FM should be F♯ so as to not contradict G♮ of Violas. Flutes and Violins II should also have C♯s and F♯s instead of C♮s and Fs♮.
+
+\mbox{88, Fls}: Tremolo markings in FM. Likely an error copying the strings, and not a flutter-tongue or similar indication
+
+\mbox{97, Hpe. 1}: 5\textsuperscript{th} note of 2\textsuperscript{nd} beam group originally is C♯ in FM, likely supposed to be D♮ like surrounding arpeggios and reductions.
+
+\mbox{100, T, B}: Last two \Vier s are aligned with the \Vier\Pu\ \Acht\ of the Soprano and Contralto. Ténors in RM and PE have \Vier\Pu\ \Acht\ \ .
+
+\mbox{100, Hpe. 1}: 5\textsuperscript{th} note of last group has a ledger line drawn for an upper staff, but it is written above it. Presumably it should be a B.
+
+\mbox{101, Chœur}: This divisi is taken from RM, which notates it as a double choir. FM and RM simply add another set of staves at 103, and so it is not clear who is singing this second part or how they transition into it.
+
+\mbox{103, Cor 4}: Extra ledger line in FM
+
+\mbox{103, Cl. 2}: From fourth note onward on this descending line, this is written a half-step too high in FM.
+
+\mbox{107--110, S}: Unclear what the meaning of the slur and the broken tie with a continuous ``Ah!'' lyric means. Perhaps a breathing point
+
+\mbox{107--110, Chœur}: Continuous slur and ``Ah!'' lyric broken at first eighth of 108 in RM and PE 
+
+\mbox{110, Vl. II.2}: Originally F♮ in FM corrected to D♮
+
+\mbox{111--112, Hpe. 1}: First notes of these measures written as quarter notes in FM. Unclear if this is meaningful
+
+114, Obs. Second half of measure is unfilled. Filling with G\scalebox{1.5}{\musDoubleSharp}s like measure 34
+
+\mbox{114, Hpe. 2}: Lower note G\scalebox{1.5}{\musDoubleSharp} should be F\scalebox{1.5}{\musDoubleSharp} (rewriting as G♮).
+
+\mbox{116, Fl. 1}: This is certainly a B in FM, but in the process of engraving was initially misread as a D♯. I found I prefer the sweeter resultant harmony, which also recalls the harmony of the climax at 102, so I would like this thought to not be forgotten, even if it is blasphemous.
+
+\mbox{117, S}: Whole note in FM, half + quarter in RM and PE
+
+\mbox{125}: RM and PE have an additional measure here. This edition extrapolates it for an alternate ending.
+
+\end{multicols}
+
+\end{hangparas}
+
+\end{document}
