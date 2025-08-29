@@ -1,11 +1,10 @@
+from pathlib import Path
+import os
 import sys
 import traceback
 
 from pypdf import PdfWriter
 from pypdf.constants import PageLabelStyle
-
-# notes_file = "tailleferre_harp_concertino_commentary.pdf"
-output_file_red = "Lili Boulanger - Soir sur la plaine pour orchestre, reduction A.pdf"
 
 
 def wrap(f):
@@ -24,13 +23,15 @@ def writeFullScore():
     writer.append("01 - Full score - Soir sur la plaine.pdf")
     writer.append(
         "01 - Full score alt ending - Soir sur la plaine.pdf", pages=(28, 29))
+    writer.append("soir_plaine_commentary.pdf")
     # writer.append(notes_file)
     writer.add_outline_item("Cover", 0)
     writer.add_outline_item("Full Score", 2)
+    writer.add_outline_item("Editorial Commentary", 28)
     writer.set_page_layout("/TwoPageRight")
     writer.set_page_label(0, 0, prefix="Cover")
     writer.set_page_label(1, 1, prefix="Instrumentation")
-    writer.set_page_label(2, 28, style=PageLabelStyle.DECIMAL)
+    writer.set_page_label(2, 29, style=PageLabelStyle.DECIMAL)
     writer.write("Lili Boulanger - Soir sur la plaine pour orchestre.pdf")
 
 
@@ -46,17 +47,28 @@ def writeReduction(coverNumber: int, withAlternateEnding: bool):
         pages.append(21)
         lastPage += 1
     writer.append(f"02 - Reduction{letter} - Soir sur la plaine.pdf", pages)
+    writer.add_outline_item("Cover", 0)
+    writer.add_outline_item("Reduction", 2)
+    writer.set_page_layout("/TwoPageRight")
     writer.set_page_label(0, 0, prefix="Cover")
     writer.set_page_label(1, 1, prefix="Foreword")
     writer.set_page_label(2, lastPage, style=PageLabelStyle.DECIMAL)
     writer.write("Lili Boulanger - Soir sur la plaine pour orchestre, "
                  f"réduction version {letter}.pdf")
 
+@wrap
+def setPageLayout(filename: str, rightLayout: bool):
+    writer = PdfWriter(Path(filename))
+    writer.set_page_layout("/TwoPageRight" if rightLayout else "/TwoPageLeft")
+    writer.write(filename)
+
 
 def main():
     writeFullScore()
     writeReduction(0, True)
     writeReduction(1, False)
+    for partFilename in os.listdir("parts_output"):
+        setPageLayout(f"parts_output/{partFilename}", "Harpe 1" not in partFilename)
 
 
 if __name__ == "__main__":
