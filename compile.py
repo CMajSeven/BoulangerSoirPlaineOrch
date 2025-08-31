@@ -64,10 +64,16 @@ def setPageLayout(filename: str, rightLayout: bool):
 
 
 def main():
+    print("Processing Full Score")
     writeFullScore()
+    print("Processing Reduction A")
     writeReduction(0, True)
+    print("Processing Reduction B")
     writeReduction(1, False)
     for partFilename in os.listdir("parts_output"):
+        if not partFilename.endswith("pdf"):
+            continue
+        print(f'Processing Part "{partFilename}"')
         setPageLayout(f"parts_output/{partFilename}", "Harpe 1" not in partFilename)
 
 
